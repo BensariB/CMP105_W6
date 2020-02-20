@@ -6,7 +6,10 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	input = in;
 
 	// initialise game objects
-
+	textBall.loadFromFile("gfx/Beach_Ball.png");
+	ball.setTexture(&textBall);
+	ball.setPosition(sf::Vector2f(600, 0));
+	ball.setSize(sf::Vector2f(100, 100));
 }
 
 Level::~Level()
@@ -17,20 +20,24 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-
+	ball.setInput(input);
+	ball.handleInput(dt);
+	if (input->isKeyDown(sf::Keyboard::Escape)) {
+		window->close();
+	}
 }
 
 // Update game objects
 void Level::update(float dt)
 {
-
+	ball.update_velocity(dt, window);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-
+	window->draw(ball);
 	endDraw();
 }
 
