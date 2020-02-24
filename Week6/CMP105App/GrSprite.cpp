@@ -6,7 +6,7 @@ void GrSprite::update_velocity(float dt, sf::RenderWindow* hwnd)
 	move(getVelocity() * dt);
 	//v = u + at
 	if (getPosition().y + getSize().y >= hwnd->getSize().y) {
-		setVelocity(getVelocity().x, getVelocity().y * (-0.4f));
+		setVelocity(getVelocity().x, getVelocity().y * (-0.5f));
 	}
 	else {
 		setVelocity(getVelocity().x, getVelocity().y + acceleration * dt);
