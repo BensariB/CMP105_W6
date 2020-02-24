@@ -6,6 +6,7 @@
 #include <iostream>
 #include "GrSprite.h"
 #include "MovingSprite.h"
+#include "Cannonball.h"
 
 
 class Level{
@@ -30,4 +31,6 @@ private:
 	GrSprite ball;
 	sf::Texture textBall;
 	MovingSprite kinball;
+	sf::CircleShape cball;
+	Cannonball cannon;
 };

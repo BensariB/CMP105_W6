@@ -12,8 +12,14 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	ball.setSize(sf::Vector2f(100, 100));
 
 	kinball.setTexture(&textBall);
-	kinball.setPosition(sf::Vector2f(0, 0));
+	kinball.setPosition(sf::Vector2f(600, 600));
 	kinball.setSize(sf::Vector2f(100, 100));
+
+	cball.setFillColor(sf::Color::Blue);
+	cball.setOutlineColor(sf::Color::White);
+	cball.setOutlineThickness(2.f);
+	cball.setPosition(sf::Vector2f(300, 300));
+	cball.setRadius(15);
 }
 
 Level::~Level()
@@ -24,11 +30,14 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-	ball.setInput(input);
-	ball.handleInput(dt);
+	//ball.setInput(input);
+	//ball.handleInput(dt);
 
 	kinball.setInput(input);
 	kinball.handleInput(dt);
+
+	cannon.setInput(input);
+	cannon.handleInput(dt);
 	if (input->isKeyDown(sf::Keyboard::Escape)) {
 		window->close();
 	}
@@ -39,6 +48,9 @@ void Level::update(float dt)
 {
 	ball.update_velocity(dt, window);
 	kinball.update(dt);
+
+	cannon.update(dt);
+	cball.setPosition(cannon.getPosition());
 }
 
 // Render level
@@ -47,6 +59,7 @@ void Level::render()
 	beginDraw();
 	window->draw(ball);
 	window->draw(kinball);
+	window->draw(cball);
 	endDraw();
 }
 
