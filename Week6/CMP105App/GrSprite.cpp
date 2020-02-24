@@ -19,4 +19,14 @@ void GrSprite::handleInput(float dt)
 		setVelocity(getVelocity().x, -300);
 		input->setKeyUp(sf::Keyboard::Space);
 	}
+	if (input->isKeyDown(sf::Keyboard::Right)) {
+		setVelocity(100 * dt, getVelocity().y);
+	}
+	if (input->isKeyDown(sf::Keyboard::Left)) {
+		setVelocity(-100 * dt, getVelocity().y);
+	}
+	if (input->isMouseLDown()) {
+		setVelocity(0, 0);
+		setPosition(input->getMouseX(), input->getMouseY());
+	}
 }
