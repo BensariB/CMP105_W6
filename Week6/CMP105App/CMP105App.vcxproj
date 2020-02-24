@@ -164,6 +164,7 @@
     <ClCompile Include="GrSprite.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MovingSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DO_NOT_EDIT.txt" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Framework\Vector.h" />
     <ClInclude Include="GrSprite.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="MovingSprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

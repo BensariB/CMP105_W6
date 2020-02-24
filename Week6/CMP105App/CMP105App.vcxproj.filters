@@ -39,6 +39,9 @@
     <ClCompile Include="GrSprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MovingSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -65,6 +68,9 @@
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="GrSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingSprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

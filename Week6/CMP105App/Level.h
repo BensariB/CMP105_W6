@@ -5,6 +5,7 @@
 #include <string.h>
 #include <iostream>
 #include "GrSprite.h"
+#include "MovingSprite.h"
 
 
 class Level{
@@ -28,4 +29,5 @@ private:
 	// More level variables
 	GrSprite ball;
 	sf::Texture textBall;
+	MovingSprite kinball;
 };
